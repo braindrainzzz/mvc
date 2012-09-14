@@ -1,20 +1,5 @@
 <?php
-/**
- * Класс User, возможность регистрации, логина, логаута, проверки на администратора
- * Определение роли, информация о юзере
- *
- * sql код таблицы:
- *   CREATE TABLE IF NOT EXISTS `users` (
- *       `id` int(10) NOT NULL AUTO_INCREMENT,
- *       `username` varchar(50) COLLATE utf8_unicode_ci NOT NULL UNIQUE,
- *       `password` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
- *       `email` varchar(100) COLLATE utf8_unicode_ci NOT NULL UNIQUE,
- *       `active` tinyint(1) NOT NULL DEFAULT '1',
- *       `role` int(11) DEFAULT '1',
- *       PRIMARY KEY (`id`)
- *   ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
- * @author "Anton Cherepanov <davetoxa@gmail.com>"
- */
+
 class user
 {
 

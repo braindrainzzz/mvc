@@ -1,7 +1,15 @@
 <?php
 
 return array(
-    'index',
-    'user',
-    'news',
+    'DB' =>  array(
+        'user'=>'root',
+        'pass'=>'123',
+        'host'=>'localhost',
+        'name'=>'mvcSource'
+    ),
+
+    'url' => array(
+        'index',
+        'news'
+    )
 );

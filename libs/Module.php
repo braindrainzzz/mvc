@@ -13,6 +13,7 @@ class Module
     {
         $path = 'modules/' . $name . '/controller/' . $name . 'Controller.php';
         $controller = $name . 'Controller';
+        print_r($controller);
         if (file_exists($path)) {
             require $path;
             $this->controller = new $controller();

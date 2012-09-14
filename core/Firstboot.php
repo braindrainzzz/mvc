@@ -2,24 +2,28 @@
 
 class Firstboot
 {
-    public $firstmod;
-    public $url;
-    public $routs;
-    public $modules = array();
+    private $firstmod;
+    private $routs;
+    private $modules = array();
 
     public function __construct()
     {
+        require 'libs/controller.php';
+        require 'libs/module.php';
+        require 'libs/model.php';
+        require 'libs/view.php';
+        require 'libs/DB.class.php';
+
+
         $this->routs = require 'config.php';
         foreach ($this->routs as $name) {
-            $modules[] = $name;
+            $this->modules[] = $name;
             ModuleManager::loadMod($name);
         }
 
         $url = isset($_GET['url']) ? $_GET['url'] : null;
         $url = rtrim($url, '/');
         $url = explode('/', $url);
-        print_r($url);
-
         if (empty($url) || $url == 'index') {
             $this->firstmod = new IndexModule();
         }
