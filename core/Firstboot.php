@@ -2,12 +2,13 @@
 
 class Firstboot
 {
-    private $firstmod;
     private $routs;
     private $modules = array();
 
+
     public function __construct()
     {
+        require 'libs/Smarty/Smarty.class.php';
         require 'libs/controller.php';
         require 'libs/module.php';
         require 'libs/model.php';
@@ -24,8 +25,8 @@ class Firstboot
         $url = isset($_GET['url']) ? $_GET['url'] : null;
         $url = rtrim($url, '/');
         $url = explode('/', $url);
-        if (empty($url) || $url == 'index') {
-            $this->firstmod = new IndexModule();
+        if (empty($_GET['url']) || $_GET['url'] == 'index') {
+            ModuleManager::loadMod('index');
         }
 
     }
