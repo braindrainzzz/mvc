@@ -1,9 +1,10 @@
 <?php
 
-class UserModule
+class UserModule extends Module
 {
     public function __construct()
     {
+        parent::loadController('user');
 
     }
 }

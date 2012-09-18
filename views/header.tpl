@@ -8,7 +8,7 @@
           <a>
              MVC
           </a>
-              <li><a href="http://localhost/mvc/index">Index</a></li>
-              <li><a href="http://localhost/mvc/news">News</a></li>
-              <li><a href="http://localhost/mvc/user">Users</a></li>
+              <li><a href="index">Index</a></li>
+              <li><a href="news">News</a></li>
+              <li><a href="user">Users</a></li>
           </ul>

@@ -2,7 +2,8 @@
 
 class View
 {
-    public $smarty;
+    private $smarty;
+    private $url;
 
     public function __construct()
     {
@@ -12,11 +13,17 @@ class View
 
     public function render($name)
     {
+        $this->url = "http://localhost/mvc/";
+        $this->smarty->assign('url', $this->url);
+
         require 'views/header.tpl';
+
+        $mod_name = strstr($_GET['url'], "/", true);
         if ($_GET['url'] === 'index')
-            $this->smarty->display('modules/index/views/news.tpl');
+            $this->smarty->display('modules/index/views/index.tpl');
         else
-            $this->smarty->display('modules/' .$_GET['url'] . '/views/' . $_GET['url'] . '.tpl');
+            $this->smarty->display('modules/'. $mod_name . '/views/' . $name . '.tpl');
+
         require 'views/footer.tpl';
 
     }
