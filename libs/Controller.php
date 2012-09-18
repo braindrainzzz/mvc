@@ -3,20 +3,20 @@
 class Controller
 {
     public $view;
-    public $model;
+    public static $model;
 
     function __construct()
     {
         $this->view = new View();
     }
 
-    public function loadModel($name)
+    public static function loadModel($name)
     {
-        $path = 'modules/' . $name . '/models/' . $name . 'model.php';
+        $path = 'modules/' . $name . '/models/' . $name . 'Model.php';
         $model = $name . 'Model';
         if (file_exists($path)) {
             require $path;
-            $this->model = new $model;
+            self::$model = new $model;
         }
 
     }

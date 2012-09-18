@@ -19,7 +19,7 @@ class View
         require 'views/header.tpl';
 
         $mod_name = strstr($_GET['url'], "/", true);
-        if ($_GET['url'] === 'index')
+        if ($_GET['url'] === 'index' || empty($_GET['url']))
             $this->smarty->display('modules/index/views/index.tpl');
         else
             $this->smarty->display('modules/'. $mod_name . '/views/' . $name . '.tpl');

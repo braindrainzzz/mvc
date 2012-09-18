@@ -9,6 +9,6 @@
              MVC
           </a>
               <li><a href="index">Index</a></li>
-              <li><a href="news">News</a></li>
-              <li><a href="user">Users</a></li>
+              <li><a href="news/index">News</a></li>
+              <li><a href="user/index">Users</a></li>
           </ul>

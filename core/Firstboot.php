@@ -17,7 +17,8 @@ class Firstboot
 
 
         $this->routs = require 'config.php';
-        foreach ($this->routs as $name) {
+        $temp = $this->routs['url'] ;
+        foreach ($temp as $name) {
             $this->modules[] = $name;
             ModuleManager::loadMod($name);
         }

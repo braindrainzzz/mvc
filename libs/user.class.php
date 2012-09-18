@@ -32,7 +32,7 @@ class user
     /*
     * Функция инициализируется при первом запуске модуля, создаёт таблицу и записывает
     * тестовый аккаунт admin / admin
-    * Используется на главной странице modules/users/news.tpl
+    * Используется на главной странице modules/users/index.tpl
     */
     public static function createFirstUser()
     {
