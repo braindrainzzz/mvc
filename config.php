@@ -1,7 +1,7 @@
 <?php
 return array(
 
-    'url' => array(
+    'modules' => array(
         'index',
         'news',
         'user'
@@ -11,6 +11,7 @@ return array(
     'user'=>'root',
     'pass'=>'123',
     'host'=>'localhost',
-    'name'=>'mvc'
+    'name'=>'mvc',
+    'charset'=>'utf8'
     )
 );

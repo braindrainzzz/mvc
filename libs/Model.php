@@ -3,13 +3,18 @@
 class Model
 {
     private $db;
+    private $data;
 
     public function __construct()
     {
-        $data = require '../config.php';
-        $_data = $data['DB'] ;
-        $this->db =  DB::connect($_data['host'], $_data['user'], $_data['pass'], $_data['name']);
+        $this->data = Model::DBdata();
+        $this->db =  DB::connect($this->data['host'], $this->data['user'], $this->data['pass'], $this->data['name']);
     }
 
+    public static function DBdata()
+    {
+        $data = require 'config.php';
+        return $data['DB'];
+    }
 
 }

@@ -14,10 +14,12 @@ class Firstboot
         require 'libs/model.php';
         require 'libs/view.php';
         require 'libs/DB.class.php';
+        require 'libs/URL.php';
+
 
 
         $this->routs = require 'config.php';
-        $temp = $this->routs['url'] ;
+        $temp = $this->routs['modules'] ;
         foreach ($temp as $name) {
             $this->modules[] = $name;
             ModuleManager::loadMod($name);
