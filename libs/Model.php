@@ -14,7 +14,7 @@ class Model
     public static function DBdata()
     {
         $data = require 'config.php';
-        return $data['DB'];
+        return $data['db'];
     }
 
 }

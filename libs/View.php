@@ -13,7 +13,7 @@ class View
 
     public function render($name)
     {
-        $this->url = "http://".$_SERVER['SERVER_NAME']."/mvc";
+        $this->url = $_SERVER['SERVER_NAME']."/mvc";
         $this->smarty->assign('url', $this->url);
 
         require 'views/header.tpl';

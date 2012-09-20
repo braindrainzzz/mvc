@@ -14,6 +14,9 @@ class NewsController extends Controller
 
     function index()
     {
+        $result = NewsModel::getNews();
+        $smarty->assign('news', $result);
+        $smarty->assign('c', 0);
         $this->view->render('index');
     }
 
