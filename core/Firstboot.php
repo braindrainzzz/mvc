@@ -15,7 +15,7 @@ class Firstboot
         require 'libs/view.php';
         require 'libs/DB.class.php';
         require 'libs/URL.php';
-
+        require 'libs/Session.php';
 
 
         $this->routs = require 'config.php';

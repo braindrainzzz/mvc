@@ -2,15 +2,25 @@
 
 class NewsController extends Controller
 {
-    function __construct()
-    {
+    function __construct() {
         parent::__construct();
-        $this->index();
+        Session::init();
+        $logged = Session::get('loggedIn');
+        if ($logged == false) {
+            Session::destroy();
+            exit;
+        }
     }
 
     function index()
     {
         $this->view->render('index');
+    }
+
+    function logout()
+    {
+        Session::destroy();
+        exit;
     }
 
 }
