@@ -14,5 +14,6 @@ class ModuleManager
             $moduleName = $mod_name . 'Module';
             $module = new $moduleName;
         }
+        else $module = new ErrorModule();
     }
 }

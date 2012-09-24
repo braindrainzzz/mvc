@@ -4,11 +4,6 @@ class Module
 {
     protected $controller;
 
-    public function __construct()
-    {
-
-    }
-
     public function loadController($name)
     {
         $path = 'modules/' . $name . '/controller/' . $name . 'Controller.php';
@@ -18,6 +13,7 @@ class Module
             require $path;
             $this->controller = new $controller();
         }
+        else $this->controller = ErrorController();
         return $this->controller;
     }
 }

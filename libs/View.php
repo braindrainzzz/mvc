@@ -2,7 +2,7 @@
 
 class View
 {
-    private $smarty;
+    public $smarty;
     private $url;
 
     public function __construct()
@@ -13,8 +13,6 @@ class View
 
     public function render($name)
     {
-        $this->url = $_SERVER['SERVER_NAME']."/mvc";
-        $this->smarty->assign('url', $this->url);
 
         require 'views/header.tpl';
 
@@ -26,5 +24,10 @@ class View
 
         require 'views/footer.tpl';
 
+    }
+
+    public function assign($var, $value)
+    {
+        $this->smarty->assign($var, $value);
     }
 }

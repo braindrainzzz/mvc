@@ -18,7 +18,7 @@ class Controller
             require $path;
             self::$model = new $model;
         }
-        else echo "Ошибка, такой модели нет";
+        else self::$model = new ErrorModule();
 
     }
 }

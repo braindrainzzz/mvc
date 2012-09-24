@@ -8,7 +8,7 @@
           <a>
              MVC
           </a>
-              <li><a href="{$url}index">Index</a></li>
-              <li><a href="{$url}news/index">News</a></li>
-              <li><a href="{$url}user/index">Users</a></li>
+              <li><a href="index">Index</a></li>
+              <li><a href="news/index">News</a></li>
+              <li><a href="user/index">Users</a></li>
           </ul>

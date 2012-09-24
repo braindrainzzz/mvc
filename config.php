@@ -9,9 +9,9 @@ return array(
 
     'db' =>  array(
     'user'=>'root',
-    'pass'=>'123',
+    'pass'=>'root',
     'host'=>'localhost',
     'name'=>'mvc',
-    'charset'=>'utf8'
+    'char'=>'utf8'
     )
 );

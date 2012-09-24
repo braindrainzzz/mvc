@@ -4,6 +4,8 @@ class NewsController extends Controller
 {
     function __construct() {
         parent::__construct();
+
+        $this->index();
         Session::init();
         $logged = Session::get('loggedIn');
         if ($logged == false) {
@@ -15,8 +17,8 @@ class NewsController extends Controller
     function index()
     {
         $result = NewsModel::getNews();
-        $smarty->assign('news', $result);
-        $smarty->assign('c', 0);
+        parent::$view->assign('news', $result);
+        parent::$view->assign('c', 0);
         $this->view->render('index');
     }
 
@@ -26,4 +28,24 @@ class NewsController extends Controller
         exit;
     }
 
+    public static function getNews()
+    {
+        NewsModel::getNews();
+    }
+
+    public static function addNews()
+    {
+        NewsModel::addNews();
+    }
+
+    public static function updateNews()
+    {
+        NewsModel::updateNews();
+    }
+
+
+    public static function delNews()
+    {
+        NewsModel::delNews();
+    }
 }
