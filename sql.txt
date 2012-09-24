@@ -1,5 +1,13 @@
-CREATE TABLE IF NOT EXISTS `data_rus` (
+CREATE TABLE IF NOT EXISTS `rus_data` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `text` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `rus_user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `login` varchar(25) NOT NULL,
+  `password` varchar(64) NOT NULL,
+  `role` enum('default','admin','owner') NOT NULL DEFAULT 'default',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;

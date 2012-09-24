@@ -13,4 +13,12 @@ class UserController extends Controller
         $this->view->render('index');
     }
 
+    public function addUser($data)
+    {
+        $data = array();
+        $data['login'] = $_POST['login'];
+        $data['password'] = $_POST['password'];
+        $data['role'] = $_POST['role'];
+        UserModel::addUser($data);
+    }
 }

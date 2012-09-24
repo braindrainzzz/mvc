@@ -5,7 +5,7 @@ class NewsModel extends Model
     function __construct()
     {
         parent::__construct();
-        DB::setTable('data_rus');
+        DB::setTable('rus_data');
     }
 
     public static function getNews()

@@ -13,6 +13,7 @@ class Controller
     public static function loadModel($name)
     {
         $path = 'modules/' . $name . '/models/' . $name . 'Model.php';
+        print_r($path) ;
         $model = $name . 'Model';
         if (file_exists($path)) {
             require $path;
