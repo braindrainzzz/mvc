@@ -18,6 +18,8 @@ class UserController extends Controller
 
     function index()
     {
+        $result = UserModel::getUsers();
+        parent::$view->assign('users', $result);
         $this->view->render('index');
     }
 
