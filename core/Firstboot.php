@@ -16,24 +16,22 @@ class Firstboot
         require 'libs/DB.class.php';
         require 'libs/URL.php';
         require 'libs/Session.php';
+        require 'libs/Validation.php';
 
-       /*
+
         $this->routs = require 'config.php';
         $temp = $this->routs['modules'] ;
         foreach ($temp as $name) {
             $this->modules[] = $name;
             ModuleManager::loadMod($name);
         }
-       */
 
-
-        $url = URL::getModuleName();
-        echo $url;
-        if (empty($url) || $url == 'index') {
+        $url = isset($_GET['url']) ? $_GET['url'] : null;
+        $url = rtrim($url, '/');
+        $url = explode('/', $url);
+        if (empty($_GET['url']) || $_GET['url'] == 'index') {
             ModuleManager::loadMod('index');
         }
-        elseif ($url == 'news' || $url == 'user' || $url == 'error')
-            ModuleManager::loadMod($url);
 
     }
 

@@ -27,7 +27,17 @@ class UserModel extends Model
             'password' => $data['password'],
             'role' => $data['role']
         ));
+    }
 
+    public static function updateUser($data)
+    {
+        $postData = array(
+            'login' => $data['login'],
+            'password' => $data['password'],
+            'role' => $data['role']
+        );
+
+        DB::update('user', $postData, "`id` = {$data['id']}");
     }
 
 }

@@ -2,9 +2,17 @@
 
 class UserController extends Controller
 {
-    function __construct()
+    public function __construct()
     {
         parent::__construct();
+        $this->index();
+        Session::init();
+        $logged = Session::get('loggedIn');
+        $role = Session::get('role');
+        if ($logged == false || $role != 'owner') {
+            Session::destroy();
+            exit;
+        }
         $this->index();
     }
 
@@ -13,12 +21,27 @@ class UserController extends Controller
         $this->view->render('index');
     }
 
-    public function addUser($data)
+    public function addUser()
     {
         $data = array();
-        $data['login'] = $_POST['login'];
-        $data['password'] = $_POST['password'];
-        $data['role'] = $_POST['role'];
+        $data['login'] = validation::filter($_POST['login']);
+        $data['password'] = validation::filter($_POST['password']);
+        $data['role'] = validation::filter($_POST['role']);
         UserModel::addUser($data);
+    }
+
+    public static function updateUser($id)
+    {
+        $data = array();
+        $data['id'] = $id;
+        $data['login'] = validation::filter($_POST['login']);
+        $data['password'] = validation::filter($_POST['password']);
+        $data['role'] = validation::filter($_POST['role']);
+        UserModel::updateUser($data);
+    }
+
+    public function delete($id)
+    {
+        UserModel::delete($id);
     }
 }
